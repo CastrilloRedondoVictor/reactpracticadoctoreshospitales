@@ -9,14 +9,18 @@ export default class MenuHospitales extends Component {
         hospitales: []
     }
 
-
-    componentDidMount = () => {
-        let request = '/webresources/hospitales'
+    getHospitales = () => {
+      let request = '/webresources/hospitales'
         axios.get(Global.apiHospitales + request).then((response) => {
             this.setState({
                 hospitales: response.data
             })
         })
+    }
+
+
+    componentDidMount = () => {
+        this.getHospitales()
     }
 
   render() {
@@ -27,6 +31,9 @@ export default class MenuHospitales extends Component {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link active" aria-current="page" to="/hospitales/">Ver Hospitales</NavLink>
                 </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

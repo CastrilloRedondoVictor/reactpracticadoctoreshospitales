@@ -7,6 +7,7 @@ import Doctores from './Doctores'
 import DetallesDoctor from './DetallesDoctor'
 import PostDoctor from './postDoctor'
 import PostHospital from './PostHospital'
+import Hospitales from './Hospitales'
 
 export default class Router extends Component {
   render() {
@@ -28,6 +29,8 @@ export default class Router extends Component {
             <Route path='/' element={ <Home /> }></Route>
             <Route path="/doctores/:hosp" element={ <GetComponentDoctores/> }/>
             <Route path="/detallesDoctor/:id" element={ <GetComponentDetallesDoctor/> }/>
+
+            <Route path="/hospitales/" element={ <Hospitales/> }/>
             <Route path="/hospitales/post" element={ <PostHospital/> }/>
 
             <Route path='*' element={ <NotFound /> }></Route>
